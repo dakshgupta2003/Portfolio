@@ -1,0 +1,559 @@
+/* font-family: 'Alfa Slab One', serif;
+font-family: 'Noto Sans JP', sans-serif;
+font-family: 'PT Serif', serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Work Sans', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box;
+    transition: 0.4s;
+}
+
+/* global variables */
+:root {
+    --sideBGcolor: #040b14;
+    --themecolor: #00A78E;
+    --iconBgcolor: #2C2F3F;
+    --textcolor: #525252;
+    --BGcolor: #F7F7F7;
+    --primary: #ec994b;
+    --white: #ffffff;
+    --bg: #f5f5f5;
+}
+
+/* HEADER START */
+
+header {
+    background-color: var(--sideBGcolor);
+    height: 100vh;
+    /* height will be 100% of the browser window*/
+    width: 300px;
+    padding: 15px 30px;
+    overflow-y: auto;
+    /*auto means if the content inside the header exceeds the height then a scroll bar will appear to scroll the content*/
+    position: fixed;
+    /*position of header will be fixed w.r.t the veiw port i.e. the parent element of header that is the body or the browser window*/
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: 0.4s;
+    z-index: 99;
+    /*heogher z-index means it is stacked over the most of the elements*/
+}
+
+
+header .profile {
+    text-align: center;
+    margin: 10px 0;
+}
+
+header .profile img {
+    width: 150px;
+    border-radius: 50%;
+    border: 7px solid var(--iconBgcolor);
+    transition: 0.4s;
+}
+
+header .profile img:hover {
+    width: 180px;
+    border: 7px solid var(--themecolor);
+}
+
+header .profile a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+header .profile h1 {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    transition: 0.4s;
+}
+
+header .profile h1:hover {
+    color: var(--themecolor);
+}
+
+header .profile .social-icons a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 37px;
+    background-color: var(--iconBgcolor);
+    color: #fff;
+    font-size: 18px;
+    margin: 1.5px;
+    margin-top: 10px;
+    transition: 0.4s;
+}
+
+
+
+header .profile .social-icons a:hover {
+    background-color: var(--themecolor);
+}
+
+
+
+
+/* NAV-BAR */
+
+header nav {
+    margin-top: 30px;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 10px;
+    margin: 7px 0;
+    color: lightgrey;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+header nav ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+header nav ul li a i:hover {
+    color: var(--themecolor);
+}
+
+header nav ul li .active i {
+    color: var(--themecolor);
+}
+
+
+/* FOOTER */
+header .footer {
+    text-align: center;
+    background-color: var(--sideBGcolor);
+    width: 300px;
+    color: lightgray;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+header .footer p span {
+    color: var(--themecolor);
+}
+
+/* Mobile nav toggle */
+
+#menubtn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: var(--themecolor);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    z-index: 999;
+    display: none;
+}
+
+/* mobile view */
+@media only screen and (max-width: 1050px) {
+    header {
+        left: -300px;
+    }
+
+    header .footer {
+        left: -300px;
+    }
+
+    #menubtn {
+        display: block;
+    }
+}
+
+/* Header Toggle */
+.mobile-nav-active header {
+    left: 0;
+
+}
+
+.mobile-nav-active header .footer {
+    left: 0;
+}
+
+
+
+/* HEADER END */
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+
+/* Main Section Start*/
+
+main {
+    margin-left: 300px;
+    background-color: var(--BGcolor);
+    transition: 0.4s;
+}
+
+@media only screen and (max-width: 1050px) {
+    main {
+        margin-left: 0;
+    }
+}
+
+/* Home Section */
+#home {
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/portfolio-back.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    /*it fixes the background image but the content inside it can be moved*/
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    background-position: center center;
+    transform: scale(1);
+    position: relative;
+    /*needs to be relative for the pseudo element*/
+    max-height: 100vh;
+    overflow: auto;
+    color: #fff;
+
+}
+
+#home::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.051);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#home .myinfo {
+    width: 40%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.myinfo .outer {
+    height: 40%;
+    margin: 20px;
+    /* background-color: green; */
+    background-color: rgba(65, 65, 65, 0.308);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* border-radius: 10px; */
+    padding: 10px;
+
+}
+
+.outer .heading {
+    margin: 10px 10px 25px 10px;
+    height: 10%;
+    /* border: 1px solid #fff; */
+}
+
+.heading h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;
+}
+
+.outer .inner_container {
+    height: 65%;
+    width: 100%;
+    /* border: 1px solid #fff; */
+    margin: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+}
+
+.inner_container .inner {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: flex-start;
+    width: 90%;
+    word-wrap: wrap;
+    transition: 0s;
+}
+
+.inner .icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.icon i {
+    color: #000;
+    font-size: 17px;
+}
+
+.inner .text {
+    width: 85%;
+    /* border: 1px solid #fff; */
+    word-wrap: wrap;
+}
+
+.text h3 {
+    font-family: 'Rubik', sans-serif;
+}
+
+.text p {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.inner .icon:hover{
+    transform: scale(1.08);
+}
+
+.inner .icon:hover + .text h3{
+    color: var(--themecolor);
+}
+
+
+/* mobile screen for 1200px width */
+@media only screen and (max-width:1200px) {
+    #home .myinfo{
+        width: 50%;
+    }
+    #home .contactform{
+        width: 50%;
+    }
+    .outer .heading {
+        margin: 10px 10px 20px 10px;
+    }
+
+    .heading h2 {
+        font-size: 25px;
+    }
+
+    .outer .inner_container{
+        word-break: break-all;
+    }
+
+    .inner .icon {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    .text p{
+        font-size: 15px;
+    }
+
+}
+
+/* //////////////////////////////////////// */
+
+.myinfo .map {
+    /* background-color: pink; */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 2.5);
+    height: 40%;
+    margin: 20px;
+    z-index: 1;
+    /* border-radius: 10px; */
+}
+
+.map iframe {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid #fff;
+    /* border-radius: 10px; */
+}
+
+#home .contactform {
+    /* background-color: red; */
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.contactform form {
+    width: 80%;
+    height: 90%;
+    background-color: #fff;
+    color: #000;
+    padding: 25px;
+    /* border-radius: 10px; */
+}
+
+.contactform form:hover{
+    transform: scale(1.02);
+}
+
+form .head {
+    margin-bottom: 40px;
+}
+
+.head h2 {
+    font-family: 'Rubik', sans-serif;
+    /* color: #000; */
+    font-size: 30px;
+    transition: 0s;
+}
+
+form .form_input {
+    width: 100%;
+    margin-top: 25px;
+    position: relative;
+}
+
+.form_input input,
+.form_input textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+    resize: none;
+    /*this way we won't be able to expand or collapse the text area*/
+}
+
+.form_input span {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    /* color: #666; */
+}
+
+.form_input input:focus~span,
+.form_input input:valid~span,
+.form_input textarea:focus~span,
+.form_input textarea:valid~span {
+    /* focus means it is clicked on or actively selected */
+    /* for valid pseudo element the input must have a required attribute */
+    color: var(--themecolor);
+    font-size: 15px;
+    transform: translateY(-25px);
+}
+
+.form_input input[type="submit"] {
+    width: 100px;
+    background-color: var(--themecolor);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-family: 'Rubik', sans-serif;
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.form_input input[type="submit"]:hover {
+    transform: scale(1.06);
+}
+
+/* Mobile View */
+@media only screen and (max-width: 410px) {
+    #home {
+        padding: 30px;
+    }
+
+    #home .home-row h1 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    #home .home-row p {
+        font-size: 10px;
+    }
+}
+
+/* Main Section End */
+
+@media only screen and (max-width:936px) {
+    #home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #home .myinfo {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .myinfo .outer {
+        height: 300px;
+    }
+
+    .inner_container .inner{
+        margin-bottom: 20px;
+    }
+
+    .inner .icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .myinfo .map {
+        height: 350px;
+    }
+
+
+    #home .contactform {
+        /* background-color: red; */
+        margin-top: 20px;
+        width: 70%;
+        height: 100%;
+    }
+
+    .contactform form {
+        height: 100%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 630px){
+
+}

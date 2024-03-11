@@ -1,0 +1,349 @@
+/* font-family: 'Alfa Slab One', serif;
+font-family: 'Noto Sans JP', sans-serif;
+font-family: 'PT Serif', serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Work Sans', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box;
+    transition: 0.4s;
+}
+
+/* global variables */
+:root{
+    --sideBGcolor: #040b14;
+    --themecolor: #00A78E;
+    --iconBgcolor: #2C2F3F;
+    --textcolor: #525252;
+    --BGcolor: #F7F7F7;
+}
+
+/* HEADER START */
+
+header{
+    background-color: var(--sideBGcolor);
+    height: 100vh; /* height will be 100% of the browser window*/
+    width: 300px;
+    padding: 15px 30px;
+    overflow-y: auto; /*auto means if the content inside the header exceeds the height then a scroll bar will appear to scroll the content*/
+    position: fixed; /*position of header will be fixed w.r.t the veiw port i.e. the parent element of header that is the body or the browser window*/
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: 0.4s;
+    z-index: 99; /*heogher z-index means it is stacked over the most of the elements*/
+}
+
+
+header .profile{
+    text-align: center;
+    margin: 10px 0;
+}
+
+header .profile img{
+    width: 150px;
+    border-radius: 50%;
+    border: 7px solid var(--iconBgcolor);
+    transition: 0.4s;
+}
+
+header .profile img:hover{
+    width: 180px;
+    border: 7px solid var(--themecolor);
+}
+
+header .profile a{
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+header .profile h1{
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    transition: 0.4s;
+}
+
+header .profile h1:hover{
+    color: var(--themecolor);
+}
+
+header .profile .social-icons a{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 37px;
+    background-color: var(--iconBgcolor);
+    color: #fff;
+    font-size: 18px;
+    margin: 1.5px;
+    margin-top: 10px;
+    transition: 0.4s;
+}
+
+
+
+header .profile .social-icons a:hover{
+    background-color: var(--themecolor);
+}
+
+
+
+
+/* NAV-BAR */
+
+header nav{
+    margin-top: 30px;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a{
+    
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 10px;
+    margin: 7px 0;
+    color: lightgrey;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+header nav ul li a i{
+    margin-right: 10px;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+header nav ul li a i:hover{
+    color: var(--themecolor);
+}
+
+header nav ul li .active i{
+    color: var(--themecolor);
+}
+
+
+/* FOOTER */
+header .footer{
+    text-align: center;
+    background-color: var(--sideBGcolor);
+    width: 300px;
+    color: lightgray;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+header .footer p span{
+    color: var(--themecolor);
+}
+
+/* Mobile nav toggle */
+
+#menubtn{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: var(--themecolor);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    z-index: 999;
+    display: none;
+}
+
+/* mobile view */
+@media only screen and (max-width: 1050px){
+    header{
+        left: -300px;
+    }
+    header .footer{
+        left: -300px;
+    }
+
+    #menubtn{
+        display: block;
+    }
+}
+
+/* Header Toggle */
+.mobile-nav-active header{
+    left: 0;
+
+}
+
+.mobile-nav-active header .footer{
+    left: 0;
+}
+
+
+
+/* HEADER END */
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+
+/* Main Section Start*/
+
+main{
+    margin-left: 300px;
+    background-color: var(--BGcolor);
+    transition: 0.4s;
+}
+
+@media only screen and (max-width: 1050px){
+    main{
+        margin-left: 0;
+    }
+}
+
+/* Home Section */
+#home{
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/portfolio1.jpg);
+    background-size: cover;
+    background-attachment: fixed; /*it fixes the background image but the content inside it can be moved*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+    background-position: center center;
+    transform: scale(1);
+    position: relative; /*needs to be relative for the pseudo element*/
+}
+
+#home::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.051);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#home .home-row{
+    z-index: 1;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #fff;
+
+}
+
+#home .home-row h1{
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 0px;
+    line-height: 52px;
+}
+
+#home .home-row p{
+    margin-top: 10px;
+    font-size: 19px;
+    font-weight: 1000;
+
+}
+
+#home .home-row p span{
+    border-bottom: 4px solid var(--themecolor);
+    padding-bottom: 2px;
+
+}
+
+#home .cv{
+    margin-top: 20px;
+    /* height: 40px;
+    width: 200px; */
+}
+
+
+/* ////////////////////RESUME BUTTON //////////////////////////*/
+#home .cv a{
+    outline: none;
+    border: none;
+}
+#home .cv .button {
+    padding: 11px 105px 6px 50px;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 600;
+    /* background-color: rgba(255, 255, 255, 0.953); */
+    background-color: #fff;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+  }
+  
+  #home .cv .button .text {
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    transition: 0.4s ease-in-out;
+    color: black;
+  }
+  
+  #home .cv .svg {
+    transform: translateY(-10px) rotate(30deg);
+    opacity: 0;
+    width: 2rem;
+    transition: 0.4s ease-in-out;
+  }
+  
+  #home .cv .button:hover {
+    background: linear-gradient(120deg, #4b6cb7, #182848);
+  }
+  
+  #home .cv .button:hover .svg {
+    
+    display: inline-block;
+    transform: translateY(0px) translateX(30px) rotate(0deg);
+    opacity: 1;
+  }
+  
+  #home .cv .button:hover .text {
+    opacity: 0;
+  }
+  
+  #home .cv .button:active {
+    scale: 0.97;
+  }
+
+/* /////////////////////////////////////////////////////////// */
+
+/* Mobile View */
+@media only screen and (max-width: 410px){
+    #home{
+        padding: 30px;
+    }
+
+    #home .home-row h1{
+        font-size: 30px;
+        line-height: 35px;
+    }
+    #home .home-row p{
+        font-size: 18px;
+    }
+}
+
+/* Main Section End */

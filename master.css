@@ -1,0 +1,29 @@
+@keyframes scaleFadeInSlow {
+    from {
+      /* transform: rotate(10deg); */
+      transform: translateX(-100%);
+      opacity: 0;
+      background: black;
+    }
+    to {
+      /* transform: rotate(0); */
+      transform: translateX(0);
+      opacity:1;
+      background: black;
+    }
+  }
+  
+  body, 
+  header,
+  main, 
+  .head,
+  .upper,
+  .about,
+  .info,
+  .content,
+  .card,
+  .contactform,
+  .map,
+  .outer {
+    animation: scaleFadeInSlow 1s ease-out;
+  }

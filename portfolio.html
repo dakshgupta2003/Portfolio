@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Noto+Sans+JP&family=PT+Serif&family=Rubik&family=Work+Sans:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="master.css">
+
+</head>
+
+<body>
+
+    <!-- Header Start -->
+    <header>
+
+        <!-- profile -->
+        <div class="profile">
+            <a href="contact.html"><img src="images/profile-pic.jpeg" alt=""></a>
+            <a href="contact.html"><h1>DAKSH GUPTA</h1></a>
+            <div class="social-icons">
+                <a href="https://github.com/dakshgupta2003" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/daksh-gupta-793b68233/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.google.com/gmail/about/" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.instagram.com/daksh_gupta2003/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+
+            </div>
+        </div>
+
+        <!-- nav-bar -->
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-user"></i>About Me</a></li>
+                <li><a href="portfolio.html" class="active"><i class="fa-solid fa-briefcase"></i>Portfolio</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-envelope"></i>Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Footer -->
+
+        <div class="footer">
+            <p>&copy;Copyright 2023 <br>Designed By <span>Daksh Gupta</span></p>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Toggle -->
+    <i class="fa-solid fa-bars" id="menubtn"></i>
+    <!-- Header End -->
+
+
+    <!-- BODY CONTENT -->
+
+    <main>
+        <!-- Home Section Start-->
+        <section id="home">
+            <div class="upper">
+                <div class="skill">
+                    <h1>Skills</h1>
+                    <div class="info">
+                        <ul>
+                            <li><span>Programming:</span> C++ Python Javascript ROS SQL</li>
+                            <li><span>Course-Work:</span> OOPS DBMS DSA OS</li>
+                            <li><span>Interest:</span> Automation Machine-Learning</li>
+                            <li><span>Tools:</span> Git Github VSCode</li>
+                            <li><span>Simulations:</span> Gazebo Rviz</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="acheive">
+                    <h1>Acheivement</h1>
+                    <div class="info">
+                        <ul>
+                            <li>Secured <span>3rd Position</span> out of 28 teams from <span>all over the globe</span> in IGVC'23 Competition in <span>Michigan, U.S.A</span></li>
+                            <li>Bagged <span>2nd Position</span> in Codescript-2023 organized <span>by DTU</span></li>
+                            <li>Rated <span>3 star on Codechef</span></li>
+                            <li>Solved <span>1000+ coding problems</span> from various platforms</li>
+                            <li>Appeared in <span>Dainik Jagaran, Delhi</span> on June 1,2023 and June 21, 2023</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="head">
+                <a class="fancy" href="#">
+                    <span class="top-key"></span>
+                    <span class="text">PROJECTS</span>
+                    <span class="bottom-key-1"></span>
+                    <span class="bottom-key-2"></span>
+                </a>
+            </div>
+
+            <div class="lower">
+                <div class="left" onclick="goleft()"><i class="fa-solid fa-angle-up"></i></div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="name">SQL<br>(Group)</div>
+                        <div class="description"><p>Built a <span>Hospital Management System</span> where one can get detailed information about <span>total no. of patients</span> in a hospital, If the patient is inpatient or outpatient, which nurse is assigned to an inpatient, what is his/her <span>room no.</span>, the <span>lab report no.</span> of patients file and many more</p>
+                        </div>
+                        <div class="show">
+                            <a href="" class="demo"><button>Demo</button></a>
+                            <a href=""  class="hub"><button><i class="fa-brands fa-github"></i></button></a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="name">Spam<br>Classifier</div>
+                        <div class="description"><p>Built a <span>machine learning modelgn</span> that classifies the input string text into <span>spam or not spam</span>. It uses many string processing tools and <span>NLP techniques</span> for exploratory data analysis. The dataset was taken from <span>Kaggle </span>and after building, the model was converted into a <span>webpage using streamlit.</span> </div>
+                        <div class="show">
+                            <a href="" class="demo"><button>Demo</button></a>
+                            <a href=""  class="hub"><button><i class="fa-brands fa-github"></i></button></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="name">Weather<br>Forecast</div>
+                        <div class="description"><p>Built using <span>HTML, CSS and JS</span>. Weather data from <span>openweathermap API</span> is given to the webpage and it provides with the functionality to display the <span>weather, wind speed, humidity, etc.</span>The user just need to enter a place and the upon hitting enter they can see the current weather conditions of that place. <span>Majorly JS</span> is used to implement the logic</p></div>
+                        <div class="show">
+                            <a href="" class="demo"><button>Demo</button></a>
+                            <a href=""  class="hub"><button><i class="fa-brands fa-github"></i></button></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="name">E-Commerce <br>Website</div>
+                        <div class="description"><p>Built a fully responsive and interactive e-commerce website to shop for clothings. Techstack used is <span>HTML,CSS,JS</span>.The site has a sleek design,<span>user friendly interface</span> and various options to select from.People can look at various variety of clothes.</p></div>
+                        <div class="show">
+                            <a href="" class="demo"><button>Demo</button></a>
+                            <a href=""  class="hub"><button><i class="fa-brands fa-github"></i></button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right" onclick="goright()"><i class="fa-solid fa-angle-up"></i></div>
+            </div>
+        </section>
+        <!-- Home Section End -->
+    </main>
+
+
+
+    <!-- swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
+
+    <!-- Typed JS file (type effect)  https://github.com/mattboldt/typed.js/-->
+    <!-- go to the above github repo -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- JS FILE -->
+    <script>
+        const slides = document.querySelectorAll('.card');
+        console.log(slides);
+
+        slides.forEach(
+            (card,index) => {
+                card.style.left = `${index*100}%`;
+            }
+        )
+
+        //make a function
+
+        const slide_card = () =>{
+            slides.forEach(
+                (card) =>{
+                    card.style.transform = `translateX(-${counter*100}%)`
+                }
+            )
+        }
+
+        var counter=0;
+        const len = slides.length;
+        const goleft = () =>{
+            counter = (counter-1)%len;
+            if(counter<0) counter = len-1;
+            slide_card();
+        }
+
+        const goright = () =>{
+            counter = (counter+1)%len;
+
+            slide_card()
+        }
+
+    </script>
+    <!-- <script src="script.js"></script> -->
+    <!-- Font Awesome JS file (For Icons) -->
+    <script src="https://kit.fontawesome.com/9cfbc8a56f.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

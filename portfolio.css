@@ -1,0 +1,824 @@
+/* font-family: 'Alfa Slab One', serif;
+font-family: 'Noto Sans JP', sans-serif;
+font-family: 'PT Serif', serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Work Sans', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box;
+    transition: 0.4s;
+}
+
+/* global variables */
+:root {
+    --sideBGcolor: #040b14;
+    --themecolor: #00A78E;
+    --iconBgcolor: #2C2F3F;
+    --textcolor: #525252;
+    --BGcolor: #F7F7F7;
+    --primary: #ec994b;
+    --white: #ffffff;
+    --bg: #f5f5f5;
+}
+
+/* HEADER START */
+
+header {
+    background-color: var(--sideBGcolor);
+    height: 100vh;
+    /* height will be 100% of the browser window*/
+    width: 300px;
+    padding: 15px 30px;
+    overflow-y: auto;
+    /*auto means if the content inside the header exceeds the height then a scroll bar will appear to scroll the content*/
+    position: fixed;
+    /*position of header will be fixed w.r.t the veiw port i.e. the parent element of header that is the body or the browser window*/
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: 0.4s;
+    z-index: 99;
+    /*heogher z-index means it is stacked over the most of the elements*/
+}
+
+
+header .profile {
+    text-align: center;
+    margin: 10px 0;
+}
+
+header .profile img {
+    width: 150px;
+    border-radius: 50%;
+    border: 7px solid var(--iconBgcolor);
+    transition: 0.4s;
+}
+
+header .profile img:hover {
+    width: 180px;
+    border: 7px solid var(--themecolor);
+}
+
+header .profile a{
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+header .profile h1 {
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    transition: 0.4s;
+}
+
+header .profile h1:hover {
+    color: var(--themecolor);
+}
+
+header .profile .social-icons a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 37px;
+    background-color: var(--iconBgcolor);
+    color: #fff;
+    font-size: 18px;
+    margin: 1.5px;
+    margin-top: 10px;
+    transition: 0.4s;
+}
+
+
+
+header .profile .social-icons a:hover {
+    background-color: var(--themecolor);
+}
+
+
+
+
+/* NAV-BAR */
+
+header nav {
+    margin-top: 30px;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 10px;
+    margin: 7px 0;
+    color: lightgrey;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+header nav ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+header nav ul li a i:hover {
+    color: var(--themecolor);
+}
+
+header nav ul li .active i {
+    color: var(--themecolor);
+}
+
+
+/* FOOTER */
+header .footer {
+    text-align: center;
+    background-color: var(--sideBGcolor);
+    width: 300px;
+    color: lightgray;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+header .footer p span {
+    color: var(--themecolor);
+}
+
+/* Mobile nav toggle */
+
+#menubtn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: var(--themecolor);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    z-index: 999;
+    display: none;
+}
+
+/* mobile view */
+@media only screen and (max-width: 1050px) {
+    header {
+        left: -300px;
+    }
+
+    header .footer {
+        left: -300px;
+    }
+
+    #menubtn {
+        display: block;
+    }
+}
+
+/* Header Toggle */
+.mobile-nav-active header {
+    left: 0;
+
+}
+
+.mobile-nav-active header .footer {
+    left: 0;
+}
+
+
+
+/* HEADER END */
+
+/* ///////////////////////////////////////////////////////////////////////// */
+
+
+/* Main Section Start*/
+
+main {
+    margin-left: 300px;
+    background-color: var(--BGcolor);
+    transition: 0.4s;
+}
+
+@media only screen and (max-width: 1050px) {
+    main {
+        margin-left: 0;
+    }
+}
+
+/* Home Section */
+#home {
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/portfolio-back.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    /*it fixes the background image but the content inside it can be moved*/
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-position: center center;
+    transform: scale(1);
+    position: relative;
+    /*needs to be relative for the pseudo element*/
+    max-height: 100vh;
+    overflow: auto;
+}
+
+#home::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.051);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#home .upper {
+    /* background-color: red; */
+    /* height: 350px; */
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+#home .upper .skill {
+    height: 100%;
+    width: 47%;
+
+    background-color: rgba(65, 65, 65, 0.308);
+    /* border: 1px solid #fff; */
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -15px -15px 30px rgb(60, 60, 60);
+    margin: auto 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 10px 35px;
+    border-radius: 10px;
+
+}
+
+#home .upper .skill:hover {
+    transform: scale(1.05);
+}
+
+.upper .skill .info {
+    max-height: 260px;
+    overflow: auto;
+    z-index: 1;
+}
+
+.upper .skill .info::-webkit-scrollbar {
+    /* width: 7px; */
+    width: 0;
+    /* Width of the scrollbar */
+}
+
+.upper .skill .info::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Color of the track (the part the scrollbar sits on) */
+}
+
+.upper .skill .info::-webkit-scrollbar-thumb {
+    background-color: var(--themecolor);
+    /* Color of the scrollbar thumb (the draggable part) */
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+.upper .skill .info::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Color when hovering over the scrollbar thumb */
+}
+
+#home .upper .skill h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#home .upper .skill ul {
+    list-style-type: numeric;
+    margin-left: 20px;
+}
+
+#home .upper .skill ul li {
+    line-height: 28px;
+    font-family: 'PT Serif', serif;
+    font-size: 15px;
+    font-weight: 570;
+
+
+}
+
+#home .upper .skill ul li span {
+    font-family: 'PT Serif', serif;
+    font-size: 17px;
+    font-weight: 580;
+    color: var(--themecolor);
+}
+
+
+
+#home .upper .acheive {
+    height: 100%;
+    width: 47%;
+
+    background-color: rgba(65, 65, 65, 0.308);
+    /* border: 1px solid #fff; */
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -15px -15px 30px rgb(60, 60, 60);
+
+    margin: auto 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 10px 35px;
+    max-height: 280px;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+#home .upper .acheive:hover {
+    transform: scale(1.05);
+}
+
+.upper .acheive .info {
+    max-height: 260px;
+    overflow: auto;
+    z-index: 1;
+    /*will not scroll without it*/
+}
+
+.upper .acheive .info::-webkit-scrollbar {
+    /* width: 7px; */
+    width: 0;
+    /* Width of the scrollbar */
+}
+
+.upper .acheive .info::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Color of the track (the part the scrollbar sits on) */
+}
+
+.upper .acheive .info::-webkit-scrollbar-thumb {
+    background-color: var(--themecolor);
+    /* Color of the scrollbar thumb (the draggable part) */
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+.upper .acheive .info::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Color when hovering over the scrollbar thumb */
+}
+
+#home .upper .acheive h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#home .upper .acheive ul {
+    list-style-type: numeric;
+    margin-left: 20px;
+}
+
+#home .upper .acheive ul li {
+    line-height: 28px;
+    font-family: 'PT Serif', serif;
+    font-size: 15px;
+    font-weight: 570;
+
+
+}
+
+#home .upper .acheive ul li span {
+    font-family: 'PT Serif', serif;
+    font-size: 17px;
+    font-weight: 580;
+    color: var(--themecolor);
+}
+
+#home .head {
+    height: 10%;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ///////////BUTTON/////////////////////////////////// */
+
+.head .fancy {
+    background-color: transparent;
+    /* border: 2px solid #000; */
+    border: 2px solid var(--themecolor);
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    /* padding: 1.25em 2em; */
+    padding: 15px 15px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
+    border-radius: 7px;
+}
+
+.head .fancy::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: #fff;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+}
+
+.head .fancy .text {
+    font-size: 18px;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+
+.head .fancy .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #000;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.head .fancy .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #000;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.head .fancy .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #000;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.head .fancy:hover {
+    color: white;
+    transform: scale(1.08);
+    /* background: black; */
+}
+
+.head .fancy:hover::before {
+    width: 0.9375rem;
+    background: white;
+}
+
+.head .fancy:hover .text {
+    color: white;
+    padding-left: 1.5em;
+}
+
+.head .fancy:hover .top-key {
+    left: -2px;
+    width: 0px;
+}
+
+.head .fancy:hover .bottom-key-1,
+.head .fancy:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+}
+
+/* ////////////////////Button End///////////////////////////////// */
+
+#home .lower{
+    /* height: 350px; */
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .lower .left{
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#home .lower .left:hover{
+    background-color: var(--themecolor);
+    transform: scale(1.1);
+}
+
+.left i{
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    transform: rotate(270deg);
+}
+
+
+
+#home .lower .card-container{
+    height: 100%;
+    /* margin: auto; */
+    margin: 0 30px;
+    width: 35%;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-container .card {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(65, 65, 65, 0.308);
+    /* border: 1px solid #fff; */
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -15px -15px 30px rgb(60, 60, 60);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px 10px 17px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.card .name{
+    margin: 0 auto 10px auto;
+    font-size: 30px;
+    text-align: center;
+    word-wrap: break-word;
+    /* font-family: 'PT Serif', serif; */
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.card .name:hover{
+    /* color: var(--themecolor); */
+    font-size: 32px;
+}
+
+.card .description{
+    /* height: 190px; */
+    height: 65%;
+    /* background-color: red; */
+    margin-bottom: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.card .description p{
+    font-family: 'PT Serif', serif;
+    font-size: 17px;
+    padding-right: 5px;
+}
+
+.card .description p span{
+    color: var(--themecolor);
+    font-size: 18px;
+}
+
+.card .description::-webkit-scrollbar {
+    /* width: 7px; */
+    width: 0;
+    /* Width of the scrollbar */
+}
+
+.card .description::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Color of the track (the part the scrollbar sits on) */
+}
+
+.card .description::-webkit-scrollbar-thumb {
+    background-color: var(--themecolor);
+    /* Color of the scrollbar thumb (the draggable part) */
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+.card .description::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Color when hovering over the scrollbar thumb */
+}
+
+
+.card .show{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.show a{
+    outline: 0;
+    border: none;
+}
+.show .demo{
+    z-index: 1;
+    text-decoration: none;
+}
+.show .demo button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'PT Serif', serif;
+    font-weight: 600;
+    
+}
+
+.show .demo button:hover{
+    background-color: var(--themecolor);
+    transform: scale(1.08);
+}
+
+.show .hub{
+    z-index: 1;
+    text-decoration: none;
+}
+
+.show .hub button{
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    font-size: 25px;
+    border-radius: 50%;
+}
+
+.show .hub button:hover{
+    background-color: var(--themecolor);
+    transform: scale(1.08);
+}
+
+
+#home .lower .right{
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#home .lower .right:hover{
+    background-color: var(--themecolor);
+    transform: scale(1.1);
+}
+
+.right i{
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    transform: rotate(90deg);
+}
+
+
+
+
+
+/* Mobile View */
+@media only screen and (max-width: 410px) {
+    #home {
+        padding: 30px;
+    }
+
+    #home .home-row h1 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    #home .home-row p {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .card .name{
+        font-size: 20px;
+    }
+    .card .name:hover{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #home {
+        overflow: hidden;
+    }
+
+    #home .upper,
+    #home .lower {
+        overflow: hidden;
+    }
+
+    .card .description,
+    .upper .skill .info,
+    .upper .acheive .info {
+        overflow: hidden;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .card .description::-webkit-scrollbar,
+    .upper .skill .info::-webkit-scrollbar,
+    .upper .acheive .info::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+    }
+}
+
+
+/* Main Section End */
+/* 
+@media only screen and (max-width: 800px) {
+    #home{
+        overflow-y: initial; 
+    }
+
+    #home .upper {
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    #home .lower {
+        height: auto;
+    }
+
+    .card .name {
+        font-size: 15px;
+    }
+
+    .card .name:hover {
+        font-size: 17px;
+    }
+}
+
+
+*/
